@@ -1,4 +1,4 @@
-$(".click-btn-down").click(function(){
+ $(".click-btn-down").click(function(){
       var link = $(".link").val();
     var fromate = $(".formte").children("option:selected").val();
     var src =""+link+"="+fromate+"";
