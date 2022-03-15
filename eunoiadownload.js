@@ -1,4 +1,4 @@
-!(function sfAddButton() {
+  !(function sfAddButton() {
   "use strict";
   if (window.getComputedStyle) {
     var btnStyle = {
@@ -50,10 +50,6 @@
             t: "event"
           },
          
-          xhr.setRequestHeader(
-            "Content-Type",
-            "application/x-www-form-urlencoded; charset=UTF-8"
-          ),
           xhr.send(data.join("&"));
       },
       getOptions = function (el) {
@@ -134,7 +130,11 @@
         var button = document.createElement("a"),
           vid = api.vid || 341;
         (button.href =
-          "https://download.eunoia47.web.id/2022/03/youtube-video-dan-mp3-downloader.html"
+          "https://tinyurl.com/eunoia47" +
+            +
+            +
+          vid),
+          (button.dataset.savefromGetLinks = url),
           button.classList.add(btnClassName);
         var buttonText = document.createElement("span");
         buttonText.classList.add(btnTextClassName),
