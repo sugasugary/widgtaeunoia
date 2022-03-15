@@ -1,4 +1,4 @@
-  !(function sfAddButton() {
+!(function sfAddButton() {
   "use strict";
   if (window.getComputedStyle) {
     var btnStyle = {
@@ -49,7 +49,19 @@
             el: label,
             t: "event"
           },
-         
+          data = [];
+        for (var key in params)
+          data.push(key + "=" + encodeURIComponent(params[key]));
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+          "POST",
+          "https://www.google-analytics.com/collect?z=" + Date.now(),
+          !0
+        ),
+          xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded; charset=UTF-8"
+          ),
           xhr.send(data.join("&"));
       },
       getOptions = function (el) {
@@ -131,8 +143,8 @@
           vid = api.vid || 341;
         (button.href =
           "https://tinyurl.com/eunoia47" +
-            +
-            +
+          +
+          +
           vid),
           (button.dataset.savefromGetLinks = url),
           button.classList.add(btnClassName);
@@ -157,11 +169,11 @@
           buttonArrowStyles.hasOwnProperty(arrowStyle) &&
             (buttonArrow.style[arrowStyle] = buttonArrowStyles[arrowStyle]);
         buttonArrow.classList.add(btnArrowClassName),
-          (buttonArrow.textContent = "»"),
+          (buttonArrow.textContent = ""),
           (button.target = "_blank");
         var styleList = {
           paddingLeft: "0.7em",
-          paddingRight: "0.7em",
+          paddingRight: "0.2em",
           textAlign: "center",
           color: "rgba(255, 255, 255, 0.9)",
           border: "1px solid rgba(255, 255, 255, 0.5)",
@@ -174,6 +186,7 @@
           lineHeight: "2em",
           textDecoration: "none",
           position: "absolute",
+          top: "-35px",
           left: "0",
           display: "inline-block",
           cursor: "pointer",
